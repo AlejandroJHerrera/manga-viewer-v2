@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { userAtom } from '../Atoms';
 
 export default function Navbar() {
+  const user = useRecoilValue(userAtom);
+  console.log(user);
   return (
     <div className="navbar bg-primary">
       <div className="flex-1">
@@ -27,10 +31,7 @@ export default function Navbar() {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img
-                src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                alt="Not available"
-              />
+              <img src="favicon.ico" alt="Not available" />
             </div>
           </label>
           <ul
