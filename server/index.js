@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import authRoute from './routes/authRoute.js';
+import userRoute from './routes/userRoute.js';
 
 const app = express();
 dotenv.config();
@@ -30,6 +31,7 @@ app.use(cors());
 app.use(cookieParser());
 
 app.use('/auth', authRoute);
+app.use('/user', userRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
