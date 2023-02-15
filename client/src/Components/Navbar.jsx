@@ -56,15 +56,17 @@ export default function Navbar() {
             tabIndex={0}
             className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
           >
-            <li>
-              <NavLink to={'/user'} className="justify-between">
-                Profile
-              </NavLink>
-            </li>
             {user ? (
-              <li>
-                <NavLink onClick={signOut}>Logout</NavLink>
-              </li>
+              <>
+                <li>
+                  <NavLink to={'/user'} className="justify-between">
+                    Profile
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink onClick={signOut}>Logout</NavLink>
+                </li>
+              </>
             ) : (
               <li>
                 <NavLink to={'/'}>Sign in</NavLink>
