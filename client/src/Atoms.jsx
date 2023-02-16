@@ -9,3 +9,8 @@ export const modalAtom = atom({
   key: 'modal',
   default: false,
 });
+
+export const mangaDBAtom = atom({
+  key: 'mangaDb',
+  default: [],
+});

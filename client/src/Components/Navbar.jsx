@@ -20,7 +20,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbar bg-primary max-w-full sm:mx-auto py-2 ">
+    <div className="navbar  max-w-6xl mx-auto py-2 sticky top-0 z-30   bg-base-100">
       <div className="flex-1">
         <NavLink
           to={'/home'}
@@ -54,14 +54,12 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-200 rounded-box w-52 border-b border-base-300"
           >
             {user ? (
               <>
                 <li>
-                  <NavLink to={'/user'} className="justify-between">
-                    Profile
-                  </NavLink>
+                  <NavLink to={'/user'}>Profile</NavLink>
                 </li>
                 <li>
                   <NavLink onClick={signOut}>Logout</NavLink>
