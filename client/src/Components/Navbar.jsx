@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { userAtom } from '../Atoms';
+import DarkMode from './DarkMode';
 
 export default function Navbar() {
   const user = useRecoilValue(userAtom);
@@ -24,13 +25,13 @@ export default function Navbar() {
       <div className="flex-1">
         <NavLink
           to={'/home'}
-          className="btn btn-ghost normal-case text-xl bg-secondary"
+          className=" btn btn-primary  normal-case text-xl "
         >
           MangaViewer
         </NavLink>
       </div>
       <div className="flex-none gap-2">
-        <div className="btn btn-secondary">
+        <div className="btn btn-primary">
           <NavLink>Library</NavLink>
         </div>
         <div className="form-control">
@@ -39,6 +40,9 @@ export default function Navbar() {
             placeholder="Search.."
             className="input input-bordered focus:border-secondary"
           />
+        </div>
+        <div className="mx-auto">
+          <DarkMode />
         </div>
 
         <div className="dropdown dropdown-end">

@@ -7,7 +7,7 @@ function ProfileInfo() {
   const user = useRecoilValue(userAtom);
   const openModal = useSetRecoilState(modalAtom);
   return (
-    <div className="flex items-center justify-center bg-gradient-to-tl from-violet-500 to-fuchsia-500">
+    <div className="flex items-center justify-center">
       <div className="flex justify-center items-center flex-col space-y-9  md:flex-row md:space-x-20 bg-gray-500 rounded-md p-6 my-5  md:my-9 shadow-2xl shadow-black">
         <div className=" space-y-4 flex flex-col items-center">
           {/* profile photo */}

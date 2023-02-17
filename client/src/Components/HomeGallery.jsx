@@ -23,12 +23,11 @@ function HomeGallery() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="carousel carousel-center h-60 lg:h-80 max-w-lg lg:max-w-2xl p-4 space-x-4 bg-gray-700 rounded-box mx-auto my-4">
+    <div className="carousel carousel-center h-60 lg:h-96 max-w-lg lg:max-w-2xl p-4 space-x-4  rounded-box mx-auto my-4">
       {mangas.slice(0, 20).map((manga) => (
         <Manga
           key={manga._id}
-          author={manga.authors[0].name}
-          chapters={manga.chapters}
+          id={manga.mal_id}
           image={manga.images.webp.image_url}
           title={manga.title}
         />

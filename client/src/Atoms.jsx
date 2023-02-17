@@ -14,3 +14,8 @@ export const mangaDBAtom = atom({
   key: 'mangaDb',
   default: [],
 });
+
+export const themeAtom = atom({
+  key: 'theme',
+  default: 'winter',
+});
