@@ -25,8 +25,8 @@ function Recomend() {
       <div className="mb-5 text-sm">
         <h3 className="font-bold text-gray-400">Recomended mangas for you</h3>
       </div>
-      {recomend.slice(0, 5).map((data) => (
-        <div className="flex items-center justify-between mt-3 " key={data.id}>
+      {recomend.slice(0, 5).map((data, i) => (
+        <div className="flex items-center justify-between mt-3 " key={i}>
           <img
             className="h-10 rounded-lg"
             src={data.entry[0].images.webp.image_url}
