@@ -1,4 +1,5 @@
 import React from 'react';
+import Comments from '../Components/Comments';
 import ItemHeader from '../Components/ItemHeader';
 
 function Item() {
@@ -10,6 +11,7 @@ function Item() {
       {/* Item options (like and add to personal library) */}
 
       {/* Item comments */}
+      <Comments />
     </div>
   );
 }
