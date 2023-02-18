@@ -27,7 +27,7 @@ function ItemHeader() {
   }, [id, mangaIndex]);
 
   return (
-    <div className="flex max-w-6xl mx-auto my-5 space-x-10">
+    <div className="flex max-w-6xl ml-28 sm:ml-0  my-5  flex-col sm:flex-row items-center justify-center sm:space-x-2">
       {!mangaApi ? (
         <>
           <div className="w-[280px]">
@@ -45,7 +45,7 @@ function ItemHeader() {
               {manga[mangaIndex]?.title_japanese}
             </h2>
             <article className="">{manga[mangaIndex]?.synopsis}</article>
-            <div className="space-x-10 mt-4">
+            <div className="sm:space-x-10 mt-4 flex items-center justify-center sm:flex-row">
               <span className="btn btn-sm bg-primary ">
                 {manga[mangaIndex]?.authors[0].name || 'N/A'}
               </span>
@@ -74,7 +74,7 @@ function ItemHeader() {
               {mangaApi.title_japanese}
             </h2>
             <article className="">{mangaApi.synopsis}</article>
-            <div className="space-x-10 mt-4">
+            <div className="sm:space-x-10 mt-4 flex items-center justify-center">
               {mangaApi &&
                 mangaApi.authors.map((el, i) => (
                   <span className="btn btn-sm bg-primary " key={i}>
