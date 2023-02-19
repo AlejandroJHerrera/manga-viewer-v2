@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Recomend() {
   const [recomend, setRecomend] = useState([]);
@@ -26,20 +27,24 @@ function Recomend() {
         <h3 className="font-bold text-gray-400">Recomended mangas for you</h3>
       </div>
       {recomend.slice(0, 5).map((data, i) => (
-        <div className="flex items-center justify-between mt-3 " key={i}>
-          <img
-            className="h-10 rounded-lg"
-            src={data.entry[0].images.webp.image_url}
-            alt={data.entry.title}
-          />
-          <div className="flex-1 ml-4">
-            <p className="font-semibold text-sm">{data.entry[0].title}</p>
-            <p className="text-sm text-gray-400 w-[230px]">
-              Recomended by {data.user.username}
-            </p>
+        <NavLink to={`/manga/${data.entry[0].mal_id}`} key={i}>
+          <div className="flex items-center justify-between mt-3 ">
+            <img
+              className="h-10 rounded-lg"
+              src={data.entry[0].images.webp.image_url}
+              alt={data.entry.title}
+            />
+            <div className="flex-1 ml-4">
+              <p className="font-semibold text-sm">{data.entry[0].title}</p>
+              <p className="text-sm text-gray-400 w-[230px]">
+                Recomended by {data.user.username}
+              </p>
+            </div>
+            <button className="font-semibold text-blue-400 text-sm">
+              View!
+            </button>
           </div>
-          <button className="font-semibold text-blue-400 text-sm">View!</button>
-        </div>
+        </NavLink>
       ))}
     </div>
   );

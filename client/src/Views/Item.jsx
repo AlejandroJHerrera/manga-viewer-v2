@@ -4,7 +4,7 @@ import ItemHeader from '../Components/ItemHeader';
 
 function Item() {
   return (
-    <div className="max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto">
+    <div className="max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto mt-10">
       {/* Item header */}
       <ItemHeader />
 

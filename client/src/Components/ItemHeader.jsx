@@ -27,10 +27,10 @@ function ItemHeader() {
   }, [id, mangaIndex]);
 
   return (
-    <div className="flex max-w-6xl ml-28 sm:ml-0  my-5  flex-col sm:flex-row items-center justify-center sm:space-x-2">
+    <div className="flex max-w-6xl ml-28 sm:ml-0  my-5  flex-col sm:flex-row items-center justify-center sm:space-x-4">
       {!mangaApi ? (
         <>
-          <div className="w-[280px]">
+          <div className="w-[280px] h-[400px]">
             <img
               src={manga[mangaIndex]?.images.webp.image_url}
               alt={manga[mangaIndex]?.title}
@@ -61,11 +61,11 @@ function ItemHeader() {
         </>
       ) : (
         <>
-          <div className="w-[280px]">
+          <div className="w-[280px] h-[400px]">
             <img
               src={mangaApi.images?.webp.image_url}
               alt={mangaApi.title}
-              className="object-cover rounded-lg"
+              className="object-cover rounded-lg h-96"
             />
           </div>
           <div className="flex-1 flex items-center justify-center flex-col ">

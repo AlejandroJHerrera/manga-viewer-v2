@@ -14,7 +14,7 @@ function Manga({ image, title, id }) {
             alt={title}
             className="object-cover w-full rounded-lg h-64 group-hover:scale-105 transition-transform duration-200 ease-out"
           />
-          <p className="font-semibold text-md text-gray-400 truncate mt-1">
+          <p className="font-semibold text-md text-gray-400 truncate mt-1 w-24">
             {title}
           </p>
         </div>

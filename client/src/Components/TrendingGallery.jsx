@@ -1,30 +1,27 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { mangaDBAtom } from '../Atoms';
+import React, { useEffect, useState } from 'react';
 import Manga from './Manga';
 
-function HomeGallery() {
-  const [mangas, setMangas] = useRecoilState(mangaDBAtom);
+function TrendingGallery() {
+  const [mangas, setMangas] = useState([]);
 
-  const fetchManga = async () => {
-    let url = '/manga/';
-
+  const fetchTrendingManga = async () => {
+    let url = 'https://api.jikan.moe/v4/top/manga';
     try {
       const res = await axios.get(url);
-      setMangas(res.data);
+      setMangas(res.data.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    fetchManga();
+    fetchTrendingManga();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="carousel carousel-center h-60 lg:h-96 max-w-lg lg:max-w-2xl p-4 space-x-4  rounded-box mx-auto my-4">
-      {mangas.slice(15, 40).map((manga) => (
+      {mangas.map((manga) => (
         <Manga
           key={manga._id}
           id={manga.mal_id}
@@ -36,4 +33,4 @@ function HomeGallery() {
   );
 }
 
-export default HomeGallery;
+export default TrendingGallery;
