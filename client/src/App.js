@@ -10,7 +10,7 @@ import Profile from './Views/Profile';
 function App() {
   const theme = useRecoilValue(themeAtom);
   return (
-    <div className="min-h-screen" data-theme={theme}>
+    <div className="" data-theme={theme}>
       <Router>
         <Navbar />
         <Routes>

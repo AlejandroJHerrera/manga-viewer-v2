@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { userAtom } from '../Atoms';
@@ -8,6 +8,15 @@ import DarkMode from './DarkMode';
 export default function Navbar() {
   const user = useRecoilValue(userAtom);
   const navigate = useNavigate();
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      setIsLogged(true);
+    } else {
+      setIsLogged(false);
+    }
+  }, [user]);
 
   const signOut = async () => {
     try {
@@ -31,9 +40,6 @@ export default function Navbar() {
         </NavLink>
       </div>
       <div className="flex-none gap-2">
-        <div className="btn btn-primary">
-          <NavLink>Library</NavLink>
-        </div>
         <div className="form-control">
           <input
             type="text"
@@ -50,7 +56,9 @@ export default function Navbar() {
             <div className="w-10 rounded-full">
               <img
                 src={
-                  user ? user.avatar : 'https://i.ibb.co/MBtjqXQ/no-avatar.gif'
+                  isLogged
+                    ? user.avatar
+                    : 'https://i.ibb.co/MBtjqXQ/no-avatar.gif'
                 }
                 alt="Not available"
               />
