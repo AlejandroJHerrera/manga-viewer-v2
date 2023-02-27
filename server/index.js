@@ -7,6 +7,8 @@ import authRoute from './routes/authRoute.js';
 import userRoute from './routes/userRoute.js';
 import mangaRoute from './routes/mangaRoute.js';
 import commentRoute from './routes/commentRoute.js';
+import favouriteRoute from './routes/favouriteRoute.js';
+import watchedRoute from './routes/watchedRoute.js';
 
 const app = express();
 dotenv.config();
@@ -36,6 +38,8 @@ app.use('/auth', authRoute);
 app.use('/user', userRoute);
 app.use('/manga', mangaRoute);
 app.use('/comment', commentRoute);
+app.use('/fav', favouriteRoute);
+app.use('/watchlist', watchedRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;

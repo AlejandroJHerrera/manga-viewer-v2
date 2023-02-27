@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   gender: { type: String },
   about: { type: String },
   commentsCount: { type: Number },
-  favoritesCount: { type: Number },
+  favorites: { type: [String] },
   likesGivenCount: { type: Number },
   avatar: { type: String },
   language: { type: String },

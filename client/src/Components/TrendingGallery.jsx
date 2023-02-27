@@ -23,7 +23,7 @@ function TrendingGallery() {
     <div className="carousel carousel-center h-60 lg:h-96 max-w-lg lg:max-w-2xl p-4 space-x-4  rounded-box mx-auto my-4">
       {mangas.map((manga) => (
         <Manga
-          key={manga._id}
+          key={manga.mal_id}
           id={manga.mal_id}
           image={manga.images.webp.image_url}
           title={manga.title}

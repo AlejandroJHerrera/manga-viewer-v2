@@ -1,6 +1,7 @@
 import React from 'react';
 import Comments from '../Components/Comments';
 import ItemHeader from '../Components/ItemHeader';
+import LikeAndAdd from '../Components/LikeAndAdd';
 
 function Item() {
   return (
@@ -9,6 +10,7 @@ function Item() {
       <ItemHeader />
 
       {/* Item options (like and add to personal library) */}
+      <LikeAndAdd />
 
       {/* Item comments */}
       <Comments />

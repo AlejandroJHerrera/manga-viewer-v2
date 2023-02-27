@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbar  max-w-6xl mx-auto py-2 sticky top-0 z-30   bg-base-100">
+    <div className="navbar  max-w-6xl mx-auto py-2 sticky top-0 z-30   bg-base">
       <div className="flex-1">
         <NavLink
           to={'/home'}
