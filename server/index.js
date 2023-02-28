@@ -9,6 +9,11 @@ import mangaRoute from './routes/mangaRoute.js';
 import commentRoute from './routes/commentRoute.js';
 import favouriteRoute from './routes/favouriteRoute.js';
 import watchedRoute from './routes/watchedRoute.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 dotenv.config();
@@ -50,6 +55,13 @@ app.use((err, req, res, next) => {
     message: errorMessage,
     stack: err.stack,
   });
+});
+
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 app.listen(process.env.PORT || 4000, () => {
